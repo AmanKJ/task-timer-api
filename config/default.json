@@ -1,6 +1,6 @@
 {
   "Secrets": {
-    "db_name": "task-api",
+    "db_name": "task-ap",
     "db_pass": "toor"
   },
   "PORT": 3000
