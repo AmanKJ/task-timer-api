@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const { Task, validate } = require("../models/task");
+const path = require("path");
+
+router.get("/", (req, res) => {
+  res.sendFile(path.resolve("./index.html"));
+});
 
 router.post("/add", async (req, res) => {
   const { error } = validate(req.body);
