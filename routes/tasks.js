@@ -4,10 +4,10 @@ const { Task, validate } = require("../models/task");
 const path = require("path");
 
 if (process.env.NODE_ENV === "production") {
-  router.use(express.static(path.resolve("../client/build")));
+  router.use(express.static(path.resolve("app/client/build")));
 
   router.get("*", (req, res) => {
-    res.sendFile(path.resolve("../client/build/index.html"));
+    res.sendFile(path.resolve("app/client/build/index.html"));
   });
 }
 
