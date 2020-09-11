@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "production") {
   router.use(express.static(path.resolve("../client/build")));
 
   router.get("*", (req, res) => {
-    res.sendFile(path.resolve("../client/build/index.htnl"));
+    res.sendFile(path.resolve("../client/build/index.html"));
   });
 }
 
