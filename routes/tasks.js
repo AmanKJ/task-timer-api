@@ -6,7 +6,7 @@ const path = require("path");
 if (process.env.NODE_ENV === "production") {
   router.use(express.static(path.resolve("client/build")));
 
-  router.get("*", (req, res) => {
+  router.get("/", (req, res) => {
     res.sendFile(path.resolve("client/build/index.html"));
   });
 }
