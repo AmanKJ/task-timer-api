@@ -3,8 +3,16 @@ const router = express.Router();
 const { Task, validate } = require("../models/task");
 const path = require("path");
 
-router.get("/", (req, res) => {
-  res.sendFile(path.resolve("./index.html"));
+if (process.env.NODE_ENV === "production") {
+  router.use(express.static(path.join(__dirname, "client", "build")));
+
+  router.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
+router.get("/data", (req, res) => {
+  res.send({ data: "Hello world" });
 });
 
 router.post("/add", async (req, res) => {
