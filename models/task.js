@@ -4,13 +4,13 @@ const joi = require("joi");
 const taskSchema = new mongoose.Schema({
   task_name: {
     type: String,
-    minlength: 5,
+    minlength: 1,
     maxlength: 50,
     required: true,
   },
   task_description: {
     type: String,
-    minlength: 5,
+    minlength: 1,
     required: true,
   },
   creator: {
@@ -25,20 +25,15 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  expireAt: {
-    type: Date,
-  },
 });
-
-taskSchema.index({ expireAt: 1 }, { expireAfterSeconds: 0 });
 
 const task = mongoose.model("Task", taskSchema);
 
 const validateTask = (task) => {
   const schema = joi.object({
-    task_name: joi.string().min(5).max(50).required(),
-    task_description: joi.string().min(5).max(50).required(),
-    creator: joi.string().min(5).max(50).required(),
+    task_name: joi.string().min(1).max(50).required(),
+    task_description: joi.string().min(1).max(50).required(),
+    creator: joi.string().min(1).max(50).required(),
     duration: joi.number().required(),
     createdAt: joi.date(),
   });
