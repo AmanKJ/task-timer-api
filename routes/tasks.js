@@ -53,7 +53,7 @@ const scheduleCron = (duration, _id) => {
       }
     }
 
-    console.log(cronJobs);
+    //console.log(cronJobs);
   }, 950);
 
   setTimeout(async () => {
