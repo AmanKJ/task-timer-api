@@ -61,7 +61,7 @@ const scheduleCron = (duration, _id) => {
     if (!task) console.log("Failed");
     console.log("Deleted!");
     clearInterval(interval);
-  }, duration * 1050);
+  }, duration * 1100);
 };
 
 router.get("/timer", async (req, res) => {
