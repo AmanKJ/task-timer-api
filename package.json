@@ -4,7 +4,7 @@
   "description": "Simple task timer api which deletes task after a certain time",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "client": "cd client && npm start",
